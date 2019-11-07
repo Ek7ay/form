@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+.box {
+    width: 500px;
+    height: 280px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ff7922;
+    padding: 20px;
+}
+.row {
+    padding-left: 30px;
+    height: 50px;
+    line-height: 50px;
+}
+.row label {
+    margin-right: 20px;
+}
+.row input {
+    width: 300px;
+    height: 35px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rebeccapurple;
+}
+.row:last-child {
+    padding-left: 133px;
+}
+.row button {
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 80px;
+    background: #ff7922;
+    margin: 0 auto;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>form</title>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div class="box">
+			<form id="form" action="" enctype="multipart/form-data">
+				<div class="row">
+					<label for="name">姓名</label><input type="text" id="name" name="name">
+				</div>
+				<div class="row">
+					<label for="password">密码</label><input type="password" id="password" name="password">
+				</div>
+				<div class="row">
+					<label for="region">地区</label><input type="text" id="region" name="region">
+				</div>
+				<div class="row">
+					<label for="tel">电话</label><input type="text" id="tel" name="tel">
+				</div>
+				<div class="row">
+					<button type="button" id="submit">提交</button>
+				</div>
+			</form>
+		</div>
+		<script src="js/jquery-1.8.3.min_2.js"></script>
+		<script>
+			const form = document.getElementById("form");
+			const formData = new FormData(form);
+
+
+
+
+
+
+
+			let submit = document.getElementById("submit");
+			submit.addEventListener("click", function () {
+
+			});
+
+
+
+
+
+
+
+
+
+
+			// var formData = new FormData($("#form")[0]);
+			function ajax(data) {
+				$.ajax({
+					url:"/operplat5454/fuc_config/add",
+					type: 'POST',
+					data: data,
+					async: false,
+					cache: false,
+					contentType: false,
+					processData: false,
+					success:function (dataJson,dataStatus) {
+						if ("success" != dataJson.retCode){
+							alert(dataJson.retMsg);
+						}else {
+							alert(dataJson.retMsg);
+							console.log(dataJson.retMsg);
+						}
+					},
+					error:function (req, errorMsg, exception) {
+						alert(errorMsg);
+					}
+				});
+			}
+
+
+		</script>
+	</body>
+</html>
