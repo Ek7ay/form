@@ -31,115 +31,20 @@
 
 			const formSelector = document.getElementById("form");
 
-			class Form {
-				constructor (formSelector) {
-					this.formSelector = formSelector;
-					this.init();
-				}
-
-				init() {
-					this.formSelector.addEventListener("submit", this.handleSubmit)
-				}
-
-				handleSubmit(event) {
-					event.preventDefault();
-					console.log(event);
-					console.log(event.target.elements.tel.value);
-
-					const inputList = Array.from(event.target.elements, function (item) {
-						if (item.type !== "submit") {
-							return {
-								name: item.name,
-								value: item.value
-							}
-						}
-					});
-
-					console.log(inputList);
-				}
-			}
-
-			new Form(formSelector);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			// let submit = document.getElementById("submit");
-			// submit.addEventListener("click", function (event) {
-			// 	console.log(event);
-			// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-			// var formData = new FormData($("#form")[0]);
-			// function ajax(data) {
-			// 	$.ajax({
-			// 		url:"/operplat5454/fuc_config/add",
-			// 		type: 'POST',
-			// 		data: data,
-			// 		async: false,
-			// 		cache: false,
-			// 		contentType: false,
-			// 		processData: false,
-			// 		success:function (dataJson,dataStatus) {
-			// 			if ("success" != dataJson.retCode){
-			// 				alert(dataJson.retMsg);
-			// 			}else {
-			// 				alert(dataJson.retMsg);
-			// 				console.log(dataJson.retMsg);
-			// 			}
-			// 		},
-			// 		error:function (req, errorMsg, exception) {
-			// 			alert(errorMsg);
-			// 		}
-			// 	});
-			// }
-
+            formSelector.addEventListener("submit", function (event) {
+                event.preventDefault();
+                console.log(event);
+                console.log(event.target.elements.tel.value);
+                const inputList = Array.from(event.target.elements, function (item) {
+                    if (item.type !== "submit") {
+                        return {
+                            name: item.name,
+                            value: item.value
+                        }
+                    }
+                });
+                console.log(inputList);
+            });
 
 		</script>
 	</body>
